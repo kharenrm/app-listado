@@ -1,0 +1,49 @@
+<link rel="import" href="./bower_components/polymer/polymer.html">
+<link rel="import" href="./listado-seleccionable-item.html">
+<dom-module id="listado-seleccionable">
+    <template>
+        <style include="listado-seleccionable-shared-style">
+        .elemento {
+            margin: 8px;
+            background-color: yellow;
+        }
+        </style>
+        <div class="container">
+            <template id="elementos" is="dom-repeat" items="[[items]]" as="elem" indexAs="index">
+                <div class="elemento">
+                    <listado-seleccionable-item id="itemSelectable" title="[[elem.title]]" subtitle="[[elem.subtitle]]" info-title="[[elem.infoTitle]]" info-subtitle="[[elem.infoSubtitle]]" on-tap="_display"></listado-seleccionable-item>
+                </div>
+            </template>
+            <button>Continuar</button>
+        </div>
+    </template>
+    <script>
+    Polymer({
+        is: 'listado-seleccionable',
+        properties: {
+            items: {
+                type: Array,
+                value: function() {
+                    return [];
+                }
+            },
+            header: {
+                type: String,
+                value: ''
+            },
+            subheader: {
+                type: String,
+                value: ''
+            },
+            btnText: {
+                type: String,
+                value: ''
+            }
+        },
+        _display: function(e) {
+            e.target.opened = !e.target.opened;
+        }
+
+    });
+    </script>
+</dom-module>

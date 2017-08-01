@@ -1,0 +1,29 @@
+<link rel="import" href="./bower_components/polymer/polymer.html">
+<link rel="import" href="./listado-seleccionable.html">
+<dom-module id="listado-datos">
+    <template>
+        <style include="listado-seleccionado-item-shared-style"></style>
+        <div class="container">
+        <listado-seleccionable items="[[items]]"></listado-seleccionable>
+        </div>
+    </template>
+    <script>
+    Polymer({
+        is: 'listado-datos',
+        properties: {
+            items:{
+                type: Array,
+                value: function(){
+                    return [
+                    {title: 'title1', subtitle: 'subtitle1', infoTitle: 'infoTitle1', infoSubtitle: 'infoSubtitle1'},
+                    {title: 'title2', subtitle: 'subtitle2', infoTitle: 'infoTitle2', infoSubtitle: 'infoSubtitle2'},
+                    {title: 'title3', subtitle: 'subtitle3', infoTitle: 'infoTitle3', infoSubtitle: 'infoSubtitle3'},
+                    {title: 'title4', subtitle: 'subtitle4', infoTitle: 'infoTitle4', infoSubtitle: 'infoSubtitle4'},
+                    {title: 'title5', subtitle: 'subtitle5', infoTitle: 'infoTitle5', infoSubtitle: 'infoSubtitle5'}
+                    ];
+                }
+            }
+        }
+    });
+    </script>
+</dom-module>

@@ -1,0 +1,48 @@
+<link rel="import" href="./bower_components/polymer/polymer.html">
+<link rel="import" href="./bower_components/iron-collapse/iron-collapse.html">
+
+<dom-module id="listado-seleccionable-item">
+    <template>
+        <style include="listado-seleccionable-item-shared-style"></style>
+
+        <div class="container">
+            <label>Titulo:[[title]]</label>
+            <label>Subtitulo: [[subtitle]]</label>
+
+            <iron-collapse id="collapse" opened$="[[opened]]">
+                <div>
+                    <label>[[infoTitle]]</label>
+                    <label>[[infoSubtitle]]</label>
+                </div>
+            </iron-collapse>
+        </div>
+    </template>
+
+    <script>
+    Polymer({
+        is: 'listado-seleccionable-item',
+        properties: {
+            title: {
+                type: String,
+                value: 'Un titulo'
+            },
+            subtitle: {
+                type: String,
+                value: 'Un subtitulo'
+            },
+            infoTitle: {
+                type: String,
+                value: 'Los detalles del title'
+            },
+            infoSubtitle: {
+                type: String,
+                value: 'Los detalles del subtitulo'
+            },
+            opened: {
+                type: Boolean,
+                value: false
+            }
+        }
+    });
+    </script>
+</dom-module>
